@@ -1,0 +1,16 @@
+.add22 {
+    display: flex; /* Use Flexbox for alignment */
+    height: 100%; 
+  }
+  
+  .admin-dashboard {
+    width: 250px; /* Adjust the width as needed */
+    flex-shrink: 0; /* Prevent shrinking */
+  }
+  
+.adoc{
+  margin-top: -700px;
+  margin-left: 300px;
+}
+  
+  

@@ -1,0 +1,16 @@
+.home {
+    display: flex; /* Use Flexbox for alignment */
+    height: 160vh; 
+  }
+  
+  .admin-dashboard {
+    width: 250px; /* Adjust the width as needed */
+    flex-shrink: 0; /* Prevent shrinking */
+  }
+  
+  .search-results {
+    flex: 1; /* Take the remaining space */
+    padding: 20px; /* Add some padding */
+    overflow-y: auto; /* Add scroll if content is too long */
+  }
+  

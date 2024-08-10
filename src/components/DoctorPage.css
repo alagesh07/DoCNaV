@@ -1,0 +1,59 @@
+.doctor-page-container {
+    width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.doctor-page-container h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.appointment-summary {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.appointment-summary h2 {
+    margin-top: 0;
+}
+
+.appointment-summary p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.additional-info {
+    text-align: center;
+}
+
+.additional-info h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.additional-info button {
+    padding: 12px 24px;
+    background-color: #1a73e8;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.additional-info button:hover {
+    background-color: #155ab6;
+}

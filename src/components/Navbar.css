@@ -1,0 +1,175 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-image: url('C:/Users/Annapoorani/Desktop/React/proj1/src/assets/memphis-mini-dark.webp');
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Logo text styling */
+.logo-text {
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 50px;
+}
+
+/* Navbar links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-link {
+  margin-left: 25px;
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 400;
+  transition: color 0.3s ease, padding 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #be1b1b;
+  padding-bottom: 3px;
+  border-bottom: 3px solid #be1b1b;
+}
+
+.navbar-signup {
+  background-color: #be1b1b;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-signup:hover {
+  background-color: #a51414;
+}
+
+/* User dropdown */
+.user-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile-icon-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 2px solid #be1b1b;
+  transition: transform 0.3s ease;
+}
+
+.profile-icon-circle:hover {
+  transform: scale(1.05);
+}
+
+.profile-icon {
+  color: #be1b1b;
+  font-size: 20px;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 1000;
+  min-width: 220px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.user-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Dropdown item styling */
+.dropdown-item {
+  padding: 15px 20px;
+  font-size: 16px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item .icon {
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f8f8;
+  color: #be1b1b;
+  cursor: pointer;
+}
+
+.dropdown-item:active {
+  background-color: #ececec;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 15px;
+  }
+
+  .navbar-link {
+    margin: 10px 0;
+  }
+
+  .navbar-signup {
+    margin: 10px 0;
+  }
+}
+
+/* Logo image adjustments */
+.navbar-logo {
+  display: block;
+  align-items: center;
+}
+
+.logo1-img {
+  width: 200px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 12px;
+  margin-bottom: -30px;
+  margin-top: -20px;
+  margin-left: -30px;
+}

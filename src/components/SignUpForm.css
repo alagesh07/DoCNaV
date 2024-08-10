@@ -1,0 +1,156 @@
+/* General body styling */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Signup form container */
+.signup-form {
+  width: 350px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Deeper shadow for more emphasis */
+  position: relative; /* Ensure it aligns correctly with other elements */
+}
+
+/* Close button */
+.signup-form .close0 {
+  margin-left: 330px;
+  margin-top: -10px;
+  cursor: pointer;
+}
+
+/* Logo */
+
+
+/* Heading */
+.signup-form h2 {
+  margin-bottom: 20px;
+  font-size: 20px; /* Larger heading for better readability */
+  color: #333; /* Match with text color of login form */
+  font-weight: 600;
+}
+
+/* Form styling */
+.signup-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input fields */
+.signup-form input {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 93%;
+}
+
+/* Radio group */
+.radio-group {
+  display: flex;
+  margin-right: 15px;
+ /* Distribute labels evenly */
+  margin-bottom: 10px;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin-right: 10px;
+  color: #666; /* Match with text color of login form */
+}
+
+.radio-group input {
+  margin-right: 5px;
+  margin-top: 11px;
+}
+
+/* Buttons */
+.continue-btn {
+  background: #be1b1b; /* Match with button color of login form */
+  border: none;
+  width: 355px;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.continue-btn:hover {
+  background: #a51a1a; /* Darker shade for hover effect */
+}
+
+/* Divider */
+.or {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 14px;
+  color: #999; /* Match with divider color of login form */
+}
+
+/* Social login */
+.social-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.social-icon {
+  margin: 0 10px;
+  width: 37px;
+  height: 37px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 10px;
+  margin-top: -7px;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.social1-icon {
+  margin: 0 10px;
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.social1-icon:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* Login link */
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-link a {
+  color: #0073e6; /* Match with link color of login form */
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  width: 300px; /* Adjust the width as needed */
+  height: 90px; /* Maintain aspect ratio */
+  margin-bottom: -30px;
+  margin-top: -30px;
+  margin-right: 0px;
+  margin-left: 20px;
+}

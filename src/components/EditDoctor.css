@@ -1,0 +1,155 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-image: url('../assets/memphis-mini.webp');
+  margin: 0;
+  padding: 0;
+}
+
+.search-results-edit {
+  width: 55%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+  background-image: url('../assets/memphis-mini.webp');
+}
+
+.header-edit {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header-edit h1 {
+  font-size: 2em;
+  color: #2c3e50;
+  margin: 0;
+  font-weight: 700;
+}
+
+.search-bar-edit {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.search-bar-edit input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 1em;
+  max-width: 600px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  outline: none;
+  background: #ffffff;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.search-bar-edit input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+}
+
+.search-bar-edit button {
+  padding: 10px 20px;
+  max-width: 90px;
+  height: 40px;
+  margin-left: 10px;
+  border: none;
+  background-color: #007bff;
+  color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.search-bar-edit button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.results-edit {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-right: 20px;
+  margin-left: 10px;
+  margin-top: 20px;
+  column-gap: 100px;
+  row-gap: 10px;
+}
+
+.provider-edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* To ensure even spacing between elements */
+  width: 250px; /* Consistent width */
+  height: 180px; /* Consistent height */
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  background-color: #ffffff;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.provider-edit:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.provider-edit img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.provider-info-edit {
+  text-align: center;
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.provider-info-edit h2 {
+  font-size: 1.2em;
+  color: #2c3e50;
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+.edit-button-edit {
+  font-size: 1em; /* Ensure consistent font size */
+  color: #ffffff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px; /* Consistent padding */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: -10px;
+  width: 80px; /* Ensure all buttons are the same width */
+  text-align: center;
+}
+
+.edit-button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  
+  margin-top: 10px;
+}
+
+.edit-button-edit:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}

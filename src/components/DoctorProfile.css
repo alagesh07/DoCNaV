@@ -1,0 +1,318 @@
+.doctor-profile {
+  margin-top: 20px;
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  background-image: url('C:\Users\Annapoorani\Desktop\React\proj1\src\assets\memphis-mini.webp');
+  color: #333;
+  text-align: left;
+  border-radius: 8px; /* Rounded corners for the profile container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the profile container */
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.doctor-profile:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 20px;
+  transition: border-bottom-color 0.3s ease;
+}
+
+.profile-header:hover {
+  border-bottom-color: #007bff; /* Change border color on hover */
+}
+
+.doctor-details {
+  display: flex;
+  align-items: center;
+}
+
+.doctor-image {
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  border-radius: 50%;
+  margin-right: 20px;
+  object-fit: cover;
+  border: 2px solid #e0eaff; /* Add a border around the image */
+  transition: border-color 0.3s ease;
+}
+
+.doctor-image:hover {
+  border-color: #0056b3; /* Change border color on hover */
+}
+
+.doctor-info {
+  margin-left: 20px;
+  flex: 1;
+}
+
+.specialty-badge {
+  background-color: #e0eaff;
+  color: #0056b3;
+  padding: 5px 10px;
+  border-radius: 15px;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.doctor-info h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.doctor-info p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.languages {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.language {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  color: #495057;
+}
+
+.rating1-experience {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align to the start */
+  font-size: 20px;
+  color: #333;
+  border-left: 3px solid #e6e6e6; /* Thicker border */
+  padding-left: 20px;
+  margin-top: 10px; /* Add margin for spacing */
+}
+
+.rating1 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.star-icon {
+  
+  color: #ffc107;
+  margin-right: 5px; /* Space between stars */
+  font-size: 22px; /* Larger star icon */
+  position: relative; /* Relative positioning for left adjustment */
+  left: -2px; /* Adjust position to bring stars closer to the line */
+}
+
+.experience, .review-count {
+  font-size: 16px;
+  color: #666;
+}
+
+.review-count {
+  margin-top: 10px; /* Additional spacing specifically for review count */
+}
+
+.profile-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.profile1-section, .profile2-section, .profile3-section, .consult1-now, .profile4-section, .profile5-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile1-section:hover, .profile2-section:hover, .profile3-section:hover, .consult1-now:hover, .profile4-section:hover, .profile5-section:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  box-shadow: 2px 15px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.profile1-section {
+  flex: 1 1 calc(70% - 10px);
+  margin-right: 10px;
+}
+
+.consult1-now {
+  flex: 1 1 calc(30% - 10px);
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  font-weight: bold;
+}
+
+.consult1-now-button {
+  width: 200px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.consult1-now-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.profile2-section {
+  flex: 1 1 calc(55% - 10px);
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.profile2-image {
+  margin-right: 20px;
+  width: 150px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.profile2-image:hover {
+  transform: scale(1.05); /* Slightly enlarge image on hover */
+}
+
+.profile2-content {
+  flex: 1;
+}
+
+.profile2-content h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.profile2-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.profile3-section {
+  flex: 1 1 calc(25% - 10px);
+  display: flex;
+  align-items: center;
+}
+
+.profile3-section p1 {
+  font-size: larger;
+  font-weight: bold;
+}
+
+.profile3-content {
+  flex: 1;
+}
+
+.profile3-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.profile3-content ul li {
+  margin-bottom: 5px;
+}
+
+.profile4-section {
+  flex: 1 1 calc(40% - 10px); /* Reduce width here */
+  margin-right: 10px;
+}
+
+.profile4-section h2 {
+  text-align: left;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.education-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.education-icon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.education-item div {
+  font-size: 14px;
+  color: #666;
+}
+
+.education-item div p {
+  font-size: smaller;
+  margin: 0;
+}
+
+.profile5-section {
+  flex: 1 1 calc(50% - 10px); /* Adjusted width */
+  margin-left: 10px;
+}
+
+.profile5-section h2 {
+  text-align: left;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.specializations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-left: auto; /* Align to the right */
+}
+
+.specialization {
+  background-color: #e0eaff;
+  color: #0056b3;
+  padding: 5px 10px;
+  border-radius: 15px;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.specialization:hover {
+  background-color: #0056b3; /* Change background color on hover */
+  color: #fff; /* Change text color on hover */
+}
+
+.hospital-container {
+  display: flex;
+  align-items: center;
+}
+
+.icon-hospital {
+  margin-right: 10px;
+  height: 70px;
+}
+
+.hospital-container div {
+  margin-left: 10px;
+}

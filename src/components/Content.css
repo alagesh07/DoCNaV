@@ -1,0 +1,95 @@
+.content {
+    background-image: url('C:\Users\Annapoorani\Desktop\React\proj1\src\assets\memphis-mini.webp');
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px; /* Reduced padding */
+    background-color: #f8f9fa; /* Light background */
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-content {
+    text-align: left;
+    margin-left: 70px;
+    flex: 1;
+    max-width: 50%; /* Consistent width */
+}
+
+.text-content h2 {
+    margin-top: 30px;
+    font-size: 1.5em; /* Reduced font size */
+    margin-bottom: 10px; /* Reduced margin */
+    color: #343a40; /* Darker color */
+    font-weight: 600; /* Bold */
+}
+
+p {
+    font-size: 0.9em; /* Reduced font size */
+    margin-bottom: 15px; /* Reduced margin */
+    color: #495057; /* Dark gray */
+    line-height: 1.5; /* Slightly reduced line-height */
+}
+
+.statistics {
+    display: grid; /* Use grid layout */
+    padding-left: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Responsive grid with minimum size */
+    gap: 20px; /* Increased gap between boxes */
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    padding: 15px; /* Reduced padding */
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Smooth scale effect */
+}
+
+.stat.large {
+    width: 180px; /* Larger width for large boxes */
+    height: 180px; /* Larger height for large boxes */
+}
+
+.stat:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.number {
+    font-size: 1.2em; /* Professional font size */
+    color: #007bff; /* Professional blue */
+    font-weight: 700; /* Bold font weight */
+    margin-bottom: 5px;
+}
+
+.description {
+    font-size: 0.9em; /* Professional font size */
+    color: #343a40; /* Darker gray */
+    line-height: 1.4;
+}
+
+.video {
+    flex: 1;
+    padding-right: 70px;
+    max-width: 30%; /* Adjusted width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video video {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}

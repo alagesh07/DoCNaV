@@ -1,0 +1,133 @@
+/* General styling for the AboutUs page */
+.about-us1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: left; /* Align all text to the left */
+}
+  
+h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #2c3e50; /* Darker text color for better readability */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+  
+h1:hover {
+    color: #3498db; /* Change color on hover */
+}
+  
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ecf0f1; /* Light background for sections */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+  
+section:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+  
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #3498db; /* Bright blue for headings */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+  
+h2:hover {
+    color: #2c3e50; /* Darker color on hover */
+}
+  
+p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+  
+ul {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+    margin: 0;
+}
+  
+.contact li {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    padding-left: 2rem; /* Space for custom bullets */
+    position: relative; /* Position for custom bullets */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+  
+.contact li:hover {
+    color: #3498db; /* Change color on hover */
+}
+  
+.contact li::before {
+    content: '✔'; /* Checkmark bullet point */
+    color: #3498db; /* Bright blue for bullet points */
+    position: absolute;
+    left: 0; /* Align bullet to the left */
+    font-size: 1.3rem; /* Adjust size to fit text */
+    top: 50%;
+    transform: translateY(-50%); /* Center bullet vertically */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+  
+.contact-info {
+    background-color: #ffffff; /* White background for contact info */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    text-align: left; /* Align text to the left */
+    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+  
+.contact-info:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+  
+.contact-info h2 {
+    margin-bottom: 15px;
+    font-size: 2rem;
+    color: #2c3e50; /* Consistent dark text color */
+}
+  
+.contact-info p {
+    
+    font-size: 1.1rem;
+    margin: 0;
+}
+  
+.contact-info a {
+    color: #3498db; /* Bright blue for links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+  
+.contact-info a:hover {
+    color: #2c3e50; /* Darker color on hover */
+    text-decoration: underline;
+}
+  
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .about-us1 {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+}
