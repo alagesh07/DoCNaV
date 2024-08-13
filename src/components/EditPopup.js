@@ -97,6 +97,7 @@ const EditPopup = ({ doctor, onClose, onSave }) => {
             <p>Specialization: {updatedDoctor.doc_spec}</p>
             <p>Experience: {updatedDoctor.doc_exp}</p>
             <p>Hospital: {updatedDoctor.hospital}</p>
+            {/* Add more fields if needed */}
           </div>
           <div className="popup-edit-form">
             <h2>Edit Doctor Details</h2>
@@ -108,45 +109,105 @@ const EditPopup = ({ doctor, onClose, onSave }) => {
                 value={updatedDoctor.doc_name}
                 onChange={handleInputChange}
               />
-            </div>
-            <div className="form-group">
-              <label>Education:</label>
+              <label>Doctor Education:</label>
               <input
                 type="text"
                 name="doc_edu"
                 value={updatedDoctor.doc_edu}
                 onChange={handleInputChange}
               />
-            </div>
-            <div className="form-group">
-              <label>Specialization:</label>
+              <label>Doctor Specialization:</label>
               <input
                 type="text"
                 name="doc_spec"
                 value={updatedDoctor.doc_spec}
                 onChange={handleInputChange}
               />
-            </div>
-            <div className="form-group">
-              <label>Experience:</label>
+              <label>Doctor Experience (Years):</label>
               <input
-                type="text"
+                type="number"
                 name="doc_exp"
                 value={updatedDoctor.doc_exp}
                 onChange={handleInputChange}
               />
-            </div>
-            <div className="form-group">
-              <label>Hospital Address:</label>
+             <label>Hospital Name:</label>
               <input
-                type="text"
                 name="hospital"
                 value={updatedDoctor.hospital}
                 onChange={handleInputChange}
               />
-            </div>
-            <div className="form-group">
-              <label>Profile Image:</label>
+              <label>Hospital Area:</label>
+              <input
+                type="text"
+                name="area"
+                value={updatedDoctor.area}
+                onChange={handleInputChange}
+              />
+              <label>Consulting Fee:</label>
+              <input
+                type="text"
+                name="fee"
+                value={updatedDoctor.fee}
+                onChange={handleInputChange}
+              />
+              <label>Languages Spoken:</label>
+              <input
+                type="text"
+                name="languages"
+                value={updatedDoctor.languages}
+                onChange={handleInputChange}
+              />
+              <label>Clinic Address:</label>
+              <textarea
+                type="text"
+                name="clinic_add"
+                value={updatedDoctor.clinic_add}
+                onChange={handleInputChange}
+                className="resizable1-textarea"
+              />
+              <label>About Doctor:</label>
+              <textarea
+                name="abt_doctor"
+                value={updatedDoctor.abt_doctor}
+                onChange={handleInputChange}
+                className="resizable1-textarea"
+              />
+              <label>College 1:</label>
+              <input
+                type="text"
+                name="clg1"
+                value={updatedDoctor.clg1}
+                onChange={handleInputChange}
+              />
+              <label>College 2:</label>
+              <input
+                type="text"
+                name="clg2"
+                value={updatedDoctor.clg2}
+                onChange={handleInputChange}
+              />
+              <label>Education 1:</label>
+              <input
+                type="text"
+                name="edu1"
+                value={updatedDoctor.edu1}
+                onChange={handleInputChange}
+              />
+              <label>Education 2:</label>
+              <input
+                type="text"
+                name="edu2"
+                value={updatedDoctor.edu2}
+                onChange={handleInputChange}
+              />
+              <label>Specifications:</label>
+              <input
+                type="text"
+                name="specs"
+                value={updatedDoctor.specs}
+                onChange={handleInputChange}
+              />
+              <label>Doctor Image:</label>
               <input
                 type="file"
                 onChange={handleImageChange}

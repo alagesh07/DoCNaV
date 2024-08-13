@@ -1,59 +1,48 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import './ReslutSearch.css'
-import doctorImage1 from '../assets/1.jpg';
-import doctorImage2 from '../assets/2.jpg';
-import { FaStar } from 'react-icons/fa';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import './ResultSearch.css';
 
 const ResultSearch = () => {
   const location = useLocation();
+  const navigate = useNavigate(); // Initialize useNavigate
   const query = new URLSearchParams(location.search);
-
+  
   const conditionQuery = query.get('condition') || '';
   const cityQuery = query.get('city') || '';
 
   const [providers, setProviders] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
-  const allProviders = [
-    {
-      id: 1,
-      name: 'Dr. Raj Kumar',
-      specialty: 'Dentist',
-      experience: '15 years of Experience',
-      qualifications: 'MBBS, Dental',
-      city: 'Gandhipuram',
-      consultationFee: '₹ 299/-',
-      imageUrl: doctorImage1,
-      rating: 4.6,
-      reviews: 414,
-    },
-    {
-      id: 2,
-      name: 'Dr. Arun Kumar',
-      specialty: 'Dentist',
-      experience: '8 years of Experience',
-      qualifications: 'MBBS, Dental - General Medicine',
-      city: 'Gandhipuram',
-      consultationFee: '₹ 499/-',
-      imageUrl: doctorImage2,
-      rating: 4.5,
-      reviews: 189,
-    },
-  ];
-
   useEffect(() => {
-    const filteredProviders = allProviders.filter(provider =>
-      (provider.specialty.toLowerCase().includes(conditionQuery.toLowerCase()) || !conditionQuery) &&
-      (provider.city.toLowerCase().includes(cityQuery.toLowerCase()) || !cityQuery) &&
-      (provider.name.toLowerCase().includes(searchTerm.toLowerCase()) || !searchTerm)
-    );
-    setProviders(filteredProviders);
+    const fetchProviders = async () => {
+      try {
+        const response = await axios.get('http://localhost:8080/admin/getDoc1', {
+          params: {
+            docCon: conditionQuery,
+            hospital: cityQuery,
+          },
+        });
+
+        const filteredProviders = response.data.filter(provider =>
+          (provider.doc_name.toLowerCase().includes(searchTerm.toLowerCase()) || !searchTerm)
+        );
+
+        setProviders(filteredProviders);
+      } catch (error) {
+        console.error('Error fetching providers:', error);
+      }
+    };
+
+    fetchProviders();
   }, [conditionQuery, cityQuery, searchTerm]);
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
+  };
+
+  const handleConsultNowClick = (id) => {
+    navigate(`/book`, { state: { doctorId: id } }); // Pass the doctor's ID to the Book page
   };
 
   return (
@@ -68,31 +57,28 @@ const ResultSearch = () => {
             onChange={handleSearchChange}
           />
           <button onClick={() => setSearchTerm(searchTerm)}>Search</button>
-        </div>
+        </div> 
       </div>
 
       <div className="results207">
         {providers.length > 0 ? (
           providers.map((provider) => (
             <div className="provider207" key={provider.id}>
-              <img src={provider.imageUrl} alt={provider.name} className="provider207-image" />
+              <img src={`data:image/jpeg;base64,${provider.img}`} alt={provider.doc_name} className="provider207-image" />
               <Link to={`/provider/${provider.id}`} className="view1-profile">View Profile</Link>
               <div className="provider207-info">
-                <h2>{provider.name}</h2>
-                <p className="experience">{provider.experience}</p>
-                <p className="qualifications">{provider.qualifications}</p>
-                <p className="city">{provider.city}</p>
+                <p className="Name-doc">{provider.doc_name}</p>
+                <p className="experience">{provider.doc_exp} years of experience</p>
+                <p className="qualifications">{provider.doc_edu}, {provider.doc_spec}</p>
+                <p className="city">{provider.clinic_add}</p>
                 <hr className="separator" />
-                <div className="rating">
-                  <FaStar className="star-icon" /> {provider.rating} • {provider.reviews} Patient Stories
-                </div>
               </div>
               <div className="consultation-fee">
                 <div className="consultation-fee-container">
                   <span className="fee-label">Consultation Fee:</span>
-                  <span className="amount">{provider.consultationFee}</span>
+                  <span className="amount">₹ {provider.fee}</span>
                 </div>
-                <button className="consult-now">Consult Now</button>
+                <button className="consult-now" onClick={() => handleConsultNowClick(provider.id)}>Consult Now</button>
               </div>
             </div>
           ))
@@ -109,7 +95,6 @@ const ResultSearch = () => {
           loading="lazy"
         ></iframe>
       </div>
-
     </div>
   );
 };

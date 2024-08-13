@@ -73,7 +73,7 @@ const Navbar = () => {
             {user.email}
             {showDropdown && (
               <div className="dropdown-menu">
-                <button onClick={goToProfile} className="dropdown-item">Profile</button>
+                {/* <button onClick={goToProfile} className="dropdown-item">Profile</button> */}
                 <button onClick={handleLogout} className="dropdown-item">Logout</button>
               </div>
             )}

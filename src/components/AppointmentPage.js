@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import './AppointmentPage.css';
-import './DoctorProfile.css';
 
 const AppointmentPage = () => {
     const [selectedDate, setSelectedDate] = useState(null);
@@ -10,10 +10,27 @@ const AppointmentPage = () => {
     const [showOptions, setShowOptions] = useState(false);
     const [showMoreDates, setShowMoreDates] = useState(false);
     const [patientName, setPatientName] = useState('');
+    const [doctor, setDoctor] = useState(null);
 
-    const navigate = useNavigate(); // Initialize useNavigate
+    const location = useLocation();
+    const navigate = useNavigate();
+    const { doctorId } = location.state || {};
 
-    // Generate dates for scheduling
+    useEffect(() => {
+        if (doctorId) {
+            const fetchDoctor = async () => {
+                try {
+                    const response = await axios.get(`http://localhost:8080/admin/getDoc/${doctorId}`);
+                    setDoctor(response.data);
+                } catch (error) {
+                    console.error('Error fetching doctor data:', error);
+                }
+            };
+
+            fetchDoctor();
+        }
+    }, [doctorId]);
+
     const generateDates = (numDays) => {
         const today = new Date();
         const datesArray = [];
@@ -31,7 +48,7 @@ const AppointmentPage = () => {
         return datesArray;
     };
 
-    const dates = generateDates(showMoreDates ? 29 : 14); // 29 days if "View more" is clicked
+    const dates = generateDates(showMoreDates ? 29 : 14);
 
     const teethProblems = [
         'Wisdom Tooth Problem',
@@ -85,51 +102,54 @@ const AppointmentPage = () => {
     };
 
     const handleBookNow = () => {
-        navigate('/payment', {
-            state: {
-                date: selectedDate,
-                time: selectedTime,
-                problem: searchTerm, // Assuming searchTerm is the problem description
-                patientName: patientName
-            }
-        });
+        if (doctor) {
+            navigate('/payment', {
+                state: {
+                    date: selectedDate,
+                    time: selectedTime,
+                    problem: searchTerm,
+                    patientName: patientName,
+                    doctor: doctor // Pass doctor details to the payment page
+                }
+            });
+        }
     };
 
     return (
         <div className="appointment-container">
-            <div className="doctor-profile">
-                <div className="profile-header">
-                    <div className="doctor-details">
-                        <img
-                            src={require('../assets/1.jpg')}
-                            alt="Doctor"
-                            className="doctor-image"
-                        />
-                        <div className="doctor-info">
-                            <span className="specialty-badge">Dermatology</span>
-                            <h1>Dr. Raj Kumar</h1>
-                            <p>MBBS, Dental</p>
-                            <div className="languages">
-                                <span className="language">English</span>
-                                <span className="language">Kannada</span>
-                                <span className="language">Hindi</span>
-                                <span className="language">Tamil</span>
+            {doctor && (
+                <div className="doctor-profile">
+                    <div className="profile-header">
+                        <div className="doctor-details">
+                            <img
+                                src={`data:image/jpeg;base64,${doctor.img}`}
+                                alt="Doctor"
+                                className="doctor-image"
+                            />
+                            <div className="doctor-info">
+                                <span className="specialty-badge">{doctor.docCon}</span>
+                                <h1>{doctor.doc_name}</h1>
+                                <p>{doctor.doc_edu} - {doctor.doc_spec}</p>
+                                <div className="languages">
+                                    {doctor.languages.split(',').map(lang => (
+                                        <span key={lang} className="language">{lang}</span>
+                                    ))}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="rating1-experience">
-                        <div className="rating1">
-                            <i className="star-icon">⭐</i> 4.56
+                        <div className="rating1-experience">
+                            <div className="rating1">
+                                <i className="star-icon">⭐</i> {4.3}
+                            </div>
+                            <div className="experience">{doctor.doc_exp} Years</div>
+                            {/* <div className="review-count">{doctor.review_count || 'No Reviews'}</div> */}
                         </div>
-                        <div className="experience">16 Years</div>
-                        <div className="review-count">10061 Reviews</div>
                     </div>
                 </div>
-            </div>
+            )}
 
-            <h1>Book an appointment for free</h1>
-            <p>The office partners with Zocdoc to schedule appointments</p>
-            
+            <h1>Book an Appointment</h1>
+
             <div className="scheduling-details">
                 <label>Scheduling details</label>
                 <input
@@ -202,18 +222,12 @@ const AppointmentPage = () => {
                         <h2>Appointment Summary</h2>
                         <p><strong>Date:</strong> {selectedDate.date} ({selectedDate.day})</p>
                         <p><strong>Time:</strong> {selectedTime}</p>
+                        <p><strong>Problem:</strong> {searchTerm}</p>
                         <p><strong>Patient Name:</strong> {patientName}</p>
+                        <button onClick={handleBookNow}>Book Now</button>
                     </div>
                 )}
             </div>
-
-            {selectedDate && selectedTime && patientName && (
-                <div className="confirm-appointment">
-                    <button onClick={handleBookNow}>Book Now</button>
-                </div>
-            )}
-
-            <p>Have a question or need help booking an appointment? Call <a href="tel:8559623622">855-962-3622</a></p>
         </div>
     );
 };

@@ -7,7 +7,7 @@ const Content = () => {
     return (
         <div className="content">
             <div className="text-content">
-                <h2>Why Choose HealthNav?</h2>
+                <h2>Why Choose Us?</h2>
                 <p>
                     Established by Dr Alagesh Venkat in 2024, HealthNav has a robust presence across the healthcare ecosystem. 
                     From routine wellness & preventive health care to innovative life-saving treatments and diagnostic services, 

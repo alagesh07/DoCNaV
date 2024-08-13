@@ -1,6 +1,6 @@
 .doctor-profile {
   margin-top: 20px;
-  font-family: 'Arial', sans-serif;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding: 20px;
   background-image: url('C:\Users\Annapoorani\Desktop\React\proj1\src\assets\memphis-mini.webp');
   color: #333;
@@ -255,7 +255,9 @@
 }
 
 .education-icon {
+  margin-top: -10px;
   margin-right: 10px;
+
   font-size: 20px;
 }
 
@@ -308,6 +310,10 @@
   align-items: center;
 }
 
+.hospital-container p
+{
+  margin-top: -20px;
+}
 .icon-hospital {
   margin-right: 10px;
   height: 70px;

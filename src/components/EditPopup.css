@@ -14,11 +14,24 @@
   background: #fff;
   padding: 20px;
   border-radius: 10px;
-  width: 80%;
+  width: 60%;
+  margin-left: 120px;
   max-width: 1000px;
-  position: relative;
+  height: 90%;
+  position: static;
   display: flex;
   gap: 20px;
+  overflow-y: auto; /* Add this line to make the content scrollable */
+}
+.resizable1-textarea {
+  width: 80%;
+  height: 100px;
+  resize: vertical;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
 }
 
 .popup-overlay .close-button {
@@ -42,10 +55,32 @@
   width: 50%;
 }
 
+.popup-edit-form h2
+{
+  margin-top: -0px;
+}
 .popup-doctor-details {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.popup-doctor-details img
+{
+  margin-top: 70px;
+}
+
+.popup-doctor-details h2
+{
+  margin-bottom: -20px;
+}
+.popup-doctor-details p
+{
+  margin-bottom: -20px;
+}
+.popup-doctor-details p
+{
+  margin-bottom: -20px;
 }
 
 .popup-doctor-image {
@@ -64,6 +99,7 @@
 }
 
 .form-group label {
+  margin-top: -10px;
   display: block;
   margin-bottom: 5px;
   color: #333;
@@ -81,7 +117,7 @@
   border-color: #007bff;
 }
 
-.save-button {
+.form-group .save-button {
   padding: 10px 20px;
   border: none;
   border-radius: 6px;

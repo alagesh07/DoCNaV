@@ -36,7 +36,8 @@ const LoginForm = ({ closeLoginForm, onSwitchToSignUp }) => {
         // Handle doctor or admin login
         if (signInType === 'Admin') {
           navigate('/admin-dashboard');
-        } else if (signInType === 'Doctor') {
+        } 
+        else if (signInType === 'Doctor') {
           navigate('/doctor', {
             state: {
               date: new Date(),
@@ -100,7 +101,7 @@ const LoginForm = ({ closeLoginForm, onSwitchToSignUp }) => {
         <div className="additional-links">
           {signInType === 'User' ? (
             <>
-              <a href="#" onClick={() => handleSignInTypeChange('Doctor')}>Doctor sign in</a>
+              {/* <a href="#" onClick={() => handleSignInTypeChange('Doctor')}>Doctor sign in</a> */}
               <a href="#" onClick={() => handleSignInTypeChange('Admin')}>Admin sign in</a>
             </>
           ) : (
